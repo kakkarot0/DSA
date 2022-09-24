@@ -5,8 +5,8 @@ public:
         int last=-1;
         for(int i=0;i<s.length();++i){
            if(s[i]==' '||(i==s.length()-1)){
-               int rev=
-                   (i==s.length()-1)?i:i-1;
+              int rev=
+                  (i==s.length()-1)?i:i-1;
                for(;rev>last;rev--){
                    result+=s[rev];
                }
@@ -15,7 +15,6 @@ public:
                }
                last=i;
            }
-               
         }
         return result;
     }
