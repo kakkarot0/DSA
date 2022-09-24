@@ -1,21 +1,16 @@
 class Solution {
 public:
     string reverseWords(string s) {
-         int lastSpaceIndex = -1;
-        int len = (int)s.size();
-        for (int strIndex = 0; strIndex <= len; strIndex++) {
-            if (strIndex == len || s[strIndex] == ' ') {
-                int startIndex = lastSpaceIndex + 1;
-                int endIndex = strIndex - 1;
-                while (startIndex < endIndex) {
-                    char temp = s[startIndex];
-                    s[startIndex] = s[endIndex];
-                    s[endIndex] = temp;
-                    startIndex++;
-                    endIndex--;
-                }
-                lastSpaceIndex = strIndex;
-            }
+        int last=-1;
+        for(int i=0;i<=s.length();++i){
+          if(i==s.length()||s[i]==' '){
+             int start=last+1;
+              int end=i-1;
+              while(start<end){
+                 swap(s[start++],s[end--]);
+              }
+              last=i;
+          }
         }
         return s;
     }
