@@ -7,10 +7,11 @@ public:
          }
          return;
      }
+        //if we decide to pick up the element we need to check
         if(arr[ind]<=target){
           ds.push_back(arr[ind]);
           sum(ind,target-arr[ind],arr,ans,ds);
-          ds.pop_back();
+          ds.pop_back(); //when u comeback make sure to pop this element
         }
         sum(ind+1,target,arr,ans,ds);
     
