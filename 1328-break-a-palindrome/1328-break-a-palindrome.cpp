@@ -7,10 +7,11 @@ public:
             if(palindrome[i]!='a'){
                 palindrome[i]='a';
                 return palindrome;
+                // coz we need to replace exactly one character
             }
             
         }
-        palindrome[n-1]='b';
+        palindrome[n-1]='b';  //this case is for when the string is aaaaa
         return palindrome;
     }
 };
