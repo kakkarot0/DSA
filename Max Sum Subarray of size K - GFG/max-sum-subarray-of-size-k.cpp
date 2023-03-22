@@ -7,7 +7,7 @@ class Solution{
 public:
     long maximumSumSubarray(int K, vector<int> &Arr , int N){
         // code here 
-        if(N<K)return 0;
+        // if(N<K)return 0;
         long sum=0;
         for(long i=0;i<K;++i){
             sum+=Arr[i];
