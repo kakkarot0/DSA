@@ -7,17 +7,22 @@ class Solution{
 public:
     long maximumSumSubarray(int K, vector<int> &Arr , int N){
         // code here 
-        // if(N<K)return 0;
+        long i=0;
+        long j=0;
         long sum=0;
-        for(long i=0;i<K;++i){
-            sum+=Arr[i];
+        long mx=INT_MIN;
+        while(j<N){
+            sum+=Arr[j];
+            if(j-i+1<K)j++;
+            else if(j-i+1==K){
+                mx=max(mx,sum);
+                sum-=Arr[i];
+                i++;
+                j++;
+            }
+            
         }
-        long curr=sum;
-        for(long i=K;i<N;++i){
-            sum=(sum-Arr[i-K]) + Arr[i];
-            curr=max(curr,sum);
-        }
-        return curr;
+            return mx;
     }
 };
 
