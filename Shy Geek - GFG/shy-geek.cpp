@@ -53,15 +53,15 @@ class Solution{
         long long low=0;
         long long high=n-1;
         long long ans=0;
-        
+        //until k is greater and high
         while(high>=0 && k>0){
             low=0;
             long long index=-1;
             long long index_val;
             while(low<=high){
                 long long mid=(low+high)/2;
-                long long mid_price=shop.get(mid);
-                if(mid_price<=k){
+                long long mid_price=shop.get(mid); //mid value price
+                if(mid_price<=k){   
                     index=mid;
                     index_val=mid_price;
                     low=mid+1;
@@ -71,9 +71,9 @@ class Solution{
                 }
                 
             }
-            ans+=(k/index_val);
-            k=k%(index_val);
-            high=index-1;
+            ans+=(k/index_val);   //storing the ans
+            k=k%(index_val);    //decreaing k
+            high=index-1;        //after the mid value there would be no index to traverse
         }
         return ans;
     }
