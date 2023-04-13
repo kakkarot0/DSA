@@ -17,6 +17,7 @@ class Solution
             if(st.empty()){
             st.push(x[i]);
             }
+            // st.push(x[i]);
             else if((st.top()=='{'&&x[i]=='}')||(st.top()=='['&&x[i]==']')||(st.top()=='('&&x[i]==')')){
                 st.pop();
             }
