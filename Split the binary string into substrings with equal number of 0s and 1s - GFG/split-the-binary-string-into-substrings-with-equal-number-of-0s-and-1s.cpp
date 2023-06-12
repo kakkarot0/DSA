@@ -9,27 +9,27 @@ class Solution {
 public:
     int maxSubStr(string str){
         //Write your code here
-        int count=0;
-        int n=str.size();
-        int zero=0;
-        int ones=0;
-        for(int i=0;i<n;i++){
-            if(str[i]=='0')zero++;
-            if(str[i]=='1')ones++;
-            if(zero==ones){
-                count++;
-                zero++;
-                ones++;
-            }
-        }
-        if (zero != ones) {
-        return -1;
+        stack<char> st;
+    int count = 0;
+
+    for (auto c : str) {
+        if (!st.empty() && st.top() != c) {
+            st.pop();
         } else {
-        return count;
+            st.push(c);
+        }
+
+        if (st.empty()) {
+            count++;
         }
     }
-            
-    
+
+    if (st.empty()) {
+        return count;
+    } else {
+        return -1;
+    }
+    }
 };
 
 
