@@ -46,10 +46,7 @@ class Solution
             curr=forward;
         }
         return prev;
-        
-            
-        }
-    
+    }
     
 };
     
