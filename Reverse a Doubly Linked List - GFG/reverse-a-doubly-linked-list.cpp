@@ -107,17 +107,12 @@ Node* reverseDLL(Node * head)
         curr=curr->next;
     }
     head=curr;
-    curr->next=curr->prev;
-    curr->prev=NULL;
-    curr=curr->next;
-    while(curr->prev!=NULL){
+    while(curr!=NULL){
         Node* temp=curr->next;
         curr->next=curr->prev;
         curr->prev=temp;
         curr=curr->next;
     }
-    curr->prev=curr->next;
-    curr->next=NULL;
     return head;
     
 }
