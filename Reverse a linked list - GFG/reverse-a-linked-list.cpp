@@ -37,8 +37,8 @@ class Solution
     {
         // code here
         // return head of reversed list
-        Node* prev=NULL;
-        Node* curr=head;
+        Node * curr=head;
+        Node * prev=NULL;
         while(curr!=NULL){
             Node* forward=curr->next;
             curr->next=prev;
@@ -76,9 +76,12 @@ int main()
 
         cin>>n;
         
-        cin>>firstdata;
-        head = new Node(firstdata);
-        tail = head;
+        if(n!=0)
+        {
+            cin>>firstdata;
+            head = new Node(firstdata);
+            tail = head;
+        }
         
         for (int i=1; i<n; i++)
         {
